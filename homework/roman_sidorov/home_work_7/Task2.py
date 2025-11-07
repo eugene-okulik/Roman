@@ -2,7 +2,7 @@ def fibonacci(limit=1000000):
     argument1, argument2 = 0, 1
     count = 0
     while count < limit:
-        yield  argument1
+        yield argument1
         argument1, argument2 = argument2, argument1 + argument2
         count += 1
 
