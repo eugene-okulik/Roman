@@ -1,6 +1,7 @@
 first = int(input('first number='))
 second = int(input('second number='))
 
+
 def operation_dec(func):
 
     def wrapper(first, second):
@@ -25,10 +26,11 @@ def calc(first, second, operation):
     elif operation == '-':
         return first - second
     elif operation == '/':
-        return first/second
+        return first / second
     elif operation == '*':
         return first * second
     else:
         return 'no operation'
+
 
 calc(first, second)

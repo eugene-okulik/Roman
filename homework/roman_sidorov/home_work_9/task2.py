@@ -20,6 +20,7 @@ def repeat_me2(count=1):
 
     return function_acceptor
 
+
 @repeat_me
 def example(text):
     print(text)
