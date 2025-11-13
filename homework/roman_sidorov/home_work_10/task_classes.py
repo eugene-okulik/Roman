@@ -38,13 +38,17 @@ class SchoolBook(Book):
 
     def __str__(self):
         status = ", зарезервирована" if self.reserved else ""
+
         return (f"Название: {self.name} , Автор: {self.author}, страниц: {self.pages}, предмет: {self.sub}, "
                 f"класс: {self.room}{status}")
 
 
-school_book1 = SchoolBook('Идиот', 'Достоевский', 500, 'Литература', 8, True, reserved=True)
+school_book1 = SchoolBook('Идиот', 'Достоевский', 500, 'Литература', 8, True,
+                          reserved=True)
 school_book2 = SchoolBook('Война и мир', 'Толстой', 3000, 'Чтение', 10, False)
-school_book3 = SchoolBook('Судьба человека', 'Шолохов', 30, 'Художественное чтение', 7, True)
+school_book3 = SchoolBook('Судьба человека', 'Шолохов', 30, 'Художественное чтение', 7,
+                          True)
+
 
 print(school_book1)
 print(school_book2)
