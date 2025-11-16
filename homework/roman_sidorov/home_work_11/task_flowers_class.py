@@ -1,5 +1,6 @@
 from typing import Optional
 
+
 class Flowers:
 
     def __init__(self, types, price, stem_length, lifetime, freshness):
@@ -7,7 +8,7 @@ class Flowers:
         self.price = price
         self.stem_length = stem_length
         self.lifetime = lifetime
-        self.freshness =freshness
+        self.freshness = freshness
 
     def __str__(self):
         return (f"{self.types}(стойкость - {self.lifetime}дн, свежесть - {self.freshness}дн, "
@@ -68,7 +69,7 @@ class Bouquet:
     def __str__(self):
         text = [
             f"  Букет ({len(self.flowers)} цветка), стоимость: {self.total_price}₽, "
-            f"средняя свежесть: {self.average_freshness:.1f}дн"]
+            f"средняя свежесть: {self.average_freshness: .1f}дн"]
         for i, f in enumerate(self.flowers, 1):
             text.append(f"  {i}. {f}")
         return "\n".join(text)
@@ -80,13 +81,14 @@ class Bouquet:
             return [f for f in self.flowers if f.lifetime <= max_day]
         return [f for f in self.flowers if min_day <= f.lifetime <= max_day]
 
+
 sun_flowers = SunFlower('Подсолнух полевой', 400, 45, 30, 15)
 tulip = Tulip('Тюльпан голандский', 300, 40, 7, 2)
 rose = Rose('Роза кустовая', 250, 60, 5, 3)
 
 
 bouquet = Bouquet()
-bouquet.add_flowers(tulip,rose,sun_flowers)
+bouquet.add_flowers(tulip, rose, sun_flowers)
 print(bouquet)
 
 bouquet.sort_by_stem_length()
