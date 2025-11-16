@@ -74,7 +74,7 @@ class Bouquet:
             text.append(f"  {i}. {f}")
         return "\n".join(text)
 
-    def find_by_lifetime(self, min_day: Optional[int] = None, max_day:Optional[int] = None):
+    def find_by_lifetime(self, min_day: Optional[int] = None, max_day: Optional[int] = None):
         if max_day is None:
             return [f for f in self.flowers if f.lifetime >= min_day]
         elif min_day is None:
