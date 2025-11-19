@@ -2,6 +2,7 @@ import os
 import re
 from datetime import datetime, timedelta
 
+
 my_path = os.path.dirname(__file__)
 base_path = os.path.dirname(os.path.dirname(my_path))
 e_okulik_path = os.path.join(base_path, 'eugene_okulik', "hw_13", 'data.txt')
