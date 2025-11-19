@@ -13,6 +13,7 @@ def reading_file_line():
         for line in okulik_txt:
             yield line.strip()
 
+
 def operation_line(line, line_number):
     date_pattern = r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{6})'
     match = re.search(date_pattern, line)
