@@ -1,4 +1,4 @@
-INSERT INTO students (name, second_name, group_id) values ('Yan', 'Bobrov', 1)
+INSERT INTO students (name, second_name) values ('Yan', 'Bobrov')
 
 INSERT INTO books (title, taken_by_student_id) 
 VALUES ('War and world', 21700), ('Stupid', 21700), ('Harry Poter', 21700)
