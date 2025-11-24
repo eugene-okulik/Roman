@@ -14,7 +14,7 @@ student = [
     ('Yanchik', 'Bobr')
 ]
 for name, second_name in student:
-    cursor.execute("INSERT INTO students (name, second_name) values (%s, %s)",(name, second_name))
+    cursor.execute("INSERT INTO students (name, second_name) values (%s, %s)", (name, second_name))
 student_id = cursor.lastrowid
 print(f"Студент {student_id}")
 
@@ -40,7 +40,7 @@ cursor.execute(
 subjects_data = ["OOP", "DB", "SQL"]
 subject_ids = []
 for title in subjects_data:
-    cursor.execute("INSERT INTO subjects (title) VALUES (%s)",(title,))
+    cursor.execute("INSERT INTO subjects (title) VALUES (%s)", (title,))
     subject_ids.append(cursor.lastrowid)
 print(f"Предметы {subject_ids}")
 subject1, subject2, subject3 = subject_ids
@@ -56,7 +56,7 @@ lessons_data = [
 lessons_ids = []
 
 for title, subj_id in lessons_data:
-    cursor.execute("INSERT INTO lessons (title, subject_id) VALUES (%s, %s)",(title, subj_id))
+    cursor.execute("INSERT INTO lessons (title, subject_id) VALUES (%s, %s)", (title, subj_id))
     lessons_ids.append(cursor.lastrowid)
 print(f"Занятия {lessons_ids}")
 
@@ -75,9 +75,9 @@ cursor.execute(f"SELECT value FROM marks WHERE student_id = {student_id}")
 print(cursor.fetchall())
 cursor.execute(f"SELECT title FROM books WHERE taken_by_student_id = {student_id}")
 print(cursor.fetchall())
-cursor.execute(f''' 
+cursor.execute(f'''
 SELECT g.title, b.title, m.value, l.title, s2.title
-FROM students s 
+FROM students s
 JOIN books b ON s.id = b.taken_by_student_id
 JOIN marks m ON m.student_id = s.id
 JOIN `groups` g ON g.id = s.group_id
