@@ -31,8 +31,10 @@ setbase = {
     for name, second_name, group_title, book_title, subject_title, lesson_title, mark_value in base
 }
 data = []
-
-with open(r"C:\Users\User\PycharmProjects\Roman\homework\eugene_okulik\Lesson_16\hw_data\data.csv", newline='') as file:
+base_path = r'C:\Users\User\PycharmProjects\Roman\homework\roman_sidorov\home_work_15'
+home_work_path = os.path.dirname(os.path.dirname(base_path))
+puth_e = os.path.join(home_work_path, 'eugene_okulik', 'Lesson_16', 'hw_data', 'data.csv')
+with open(puth_e, newline='') as file:
     data_file = csv.DictReader(file)
     for row in data_file:
         name_f = row.get('name', '')
