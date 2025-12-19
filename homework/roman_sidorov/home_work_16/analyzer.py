@@ -48,7 +48,7 @@ def logs_in_dir(file, t):
         with open(file_path, 'r') as f:
             for line_num, line in enumerate(f, 1):
                 dt, message = parse_log_line_to_dict(line)
-                match = t in message and dt != None
+                match = t in message and dt is not None
                 if match:
                     context = extract_context(message, t)
                     find_logs.append({
