@@ -43,20 +43,20 @@ def extract_context(message, t, before=5, after=5):
 
 def logs_in_dir(file, t):
     log_path = Path(file)
-    hits = []
+    find_logs = []
     for file_path in log_path.iterdir():
         with open(file_path, 'r') as f:
             for line_num, line in enumerate(f, 1):
                 dt, message = parse_log_line_to_dict(line)
-                match = t in message  and dt != None
+                match = t in message and dt != None
                 if match:
                     context = extract_context(message, t)
-                    hits.append({
+                    find_logs.append({
                         'file': file_path.name,
                         'line_num': line_num,
                         f'{dt}': context,
                     })
-    return hits
+    return find_logs
 
 
 print(f"Анализ директории {args.file} и поиск текста {args.t}")
