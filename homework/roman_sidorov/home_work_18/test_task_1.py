@@ -59,8 +59,7 @@ def new_post_del(precond):
             "color": "blue",
             "size": "average"
         }}
-]
-                         )
+])
 def test_post(precond, a):
     headers = {'Content-Type': 'application/json'}
     response = requests.post('http://objapi.course.qa-practice.com/object', json=a, headers=headers)
