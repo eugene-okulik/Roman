@@ -1,5 +1,6 @@
 import allure
 
+
 class EndPoint:
     url = 'http://objapi.course.qa-practice.com/object'
     response = None
@@ -19,5 +20,5 @@ class EndPoint:
         assert self.response.status_code == 400, 'Status not 400'
 
     @allure.step('Check that title update after PATCH')
-    def check_response_title_is_correct_patch(self,patch_test):
-        assert  self.json['name'] == patch_test, 'Uncorrected name'
+    def check_response_title_is_correct_patch(self, patch_test):
+        assert self.json['name'] == patch_test, 'Uncorrected name'

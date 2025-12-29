@@ -13,8 +13,8 @@ class UpdatePost(CreatePost):
         self.response = (requests.put
             (
             f'{self.url}/{self.post_id}',
-                json=body,
-                headers=headers
+            json=body,
+            headers=headers
         )
         )
         return self.response

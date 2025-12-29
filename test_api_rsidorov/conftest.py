@@ -5,6 +5,7 @@ from base_end_point.putch_post import PatchPost
 from base_end_point.update_post import UpdatePost
 from base_end_point.del_post import DelPost
 
+
 @pytest.fixture(scope="session")
 def start_stop():
     print("Start testing")
@@ -23,15 +24,17 @@ def precond():
 def create_post_endpointe(start_stop, precond):
     return CreatePost()
 
+
 @pytest.fixture()
-def update_post(precond,create_post_endpointe):
+def update_post(precond, create_post_endpointe):
     return UpdatePost()
+
 
 @pytest.fixture()
 def del_new_post(precond):
     return DelPost()
 
+
 @pytest.fixture()
 def patch_new_post(precond):
     return PatchPost()
-
