@@ -19,6 +19,7 @@ def precond():
     yield
     print("after_test")
 
+
 @pytest.fixture()
 def create_car():
     body = {"name": "car", "data": {"color": "red", "size": "large"}}
@@ -26,6 +27,7 @@ def create_car():
     response = creator.create_new_car(body)
     post_data = response.json()
     return post_data
+
 
 @pytest.fixture()
 def create_post_endpointe(start_stop, precond):
