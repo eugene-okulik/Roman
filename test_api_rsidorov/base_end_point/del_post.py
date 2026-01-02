@@ -1,14 +1,12 @@
 import allure
 import requests
-from base_end_point.create_post import CreatePost
+from base_end_point.end_point import EndPoint
 
 
-class DelPost(CreatePost):
+class DelPost(EndPoint):
 
     @allure.step('Delete post')
-    def del_obj(self, headers=None):
-        body_create = {"name": "create_for_update", "data": {"color": "blue", "size": "average"}}
-        self.create_new_post(body_create)
+    def del_obj(self, post_id, headers=None):
         headers = headers if headers else self.headers
-        self.response = requests.delete(f'{self.url}/{self.post_id}', headers=headers)
+        self.response = requests.delete(f'{self.url}/{post_id}', headers=headers)
         return self.response

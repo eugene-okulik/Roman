@@ -1,14 +1,12 @@
 import allure
 import requests
-from base_end_point.create_post import CreatePost
+from base_end_point.end_point import EndPoint
 
 
-class UpdatePost(CreatePost):
+class UpdatePost(EndPoint):
 
     @allure.step('Update a post')
-    def changing_a_post(self, headers=None, body=None):
-        body_create = {"name": "create_for_update", "data": {"color": "blue", "size": "average"}}
-        self.create_new_post(body_create)
+    def changing_a_car(self, post_id, headers=None, body=None):
         headers = headers if headers else self.headers
-        self.response = (requests.put(f'{self.url}/{self.post_id}', json=body, headers=headers))
+        self.response = (requests.put(f'{self.url}/{post_id}', json=body, headers=headers))
         return self.response

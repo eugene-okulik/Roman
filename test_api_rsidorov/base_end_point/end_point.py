@@ -8,8 +8,8 @@ class EndPoint:
     headers = {'Content-Type': 'application/json'}
 
     @allure.step('Check that title is the same as sent')
-    def check_response_title_is_correct(self, test):
-        assert self.json['name'] == test, 'Uncorrected name'
+    def check_response_title_is_correct(self, car):
+        assert self.json['name'] == car, 'Uncorrected name'
 
     @allure.step('Check that response is 200')
     def check_that_status_is_200(self):
