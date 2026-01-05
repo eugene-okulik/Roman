@@ -21,29 +21,33 @@ def precond():
 
 
 @pytest.fixture()
-def create_car():
+def create_car(create_car_endpointe, del_new_car):
     body = {"name": "car", "data": {"color": "red", "size": "large"}}
-    creator = CreatePost()
-    response = creator.create_new_car(body)
+    response = create_car_endpointe.create_new_car(body)
     post_data = response.json()
-    return post_data
+    post_id = post_data['id']
+    yield post_data
+    print(f"🗑 Удаляем объект с id={post_id}")
+    del_new_car.del_obj(post_id)
+
+
 
 
 @pytest.fixture()
-def create_post_endpointe(start_stop, precond):
+def create_car_endpointe(start_stop, precond):
     return CreatePost()
 
 
 @pytest.fixture()
-def update_post(precond, create_post_endpointe):
+def update_car(precond):
     return UpdatePost()
 
 
 @pytest.fixture()
-def del_new_post(precond):
+def del_new_car(precond):
     return DelPost()
 
 
 @pytest.fixture()
-def patch_new_post(precond):
+def patch_new_car(precond):
     return PatchPost()

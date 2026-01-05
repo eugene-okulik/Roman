@@ -11,4 +11,5 @@ class CreatePost(EndPoint):
         headers = headers if headers else self.headers
         self.response = requests.post(self.url, json=body, headers=headers)
         self.json = self.response.json()
+        print(f"🔧 Создан объект с id={self.json['id']}")
         return self.response
