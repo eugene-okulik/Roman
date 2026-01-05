@@ -30,7 +30,7 @@ class CudCar(HttpUser):
 
     @tag('smoke')
     @task
-    def create_new_cars(self):
+    def create_new_car(self):
         update_body = {
             "name": "no_test",
             "data": {
@@ -39,4 +39,3 @@ class CudCar(HttpUser):
             }
         }
         self.client.put(f'/object/{self.post_id}', json=update_body, headers=self.headers)
-        patch_body = {"name": "patch_test"}
