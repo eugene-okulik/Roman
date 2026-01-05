@@ -1,7 +1,6 @@
 from locust import task, HttpUser, tag
 
 
-
 class CudCar(HttpUser):
 
     def on_start(self):
@@ -12,7 +11,7 @@ class CudCar(HttpUser):
         print(f'Объект {self.post_id} создан')
 
     def on_stop(self):
-        self.client.delete(f'/object/{self.post_id}',  headers=self.headers)
+        self.client.delete(f'/object/{self.post_id}', headers=self.headers)
         print(f'Объект {self.post_id} удален')
 
     @tag('critpath')
