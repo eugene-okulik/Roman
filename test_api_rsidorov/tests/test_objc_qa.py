@@ -18,7 +18,6 @@ def test_put_a_car(create_car, update_car):
     update_car.check_that_status_is_200()
 
 
-
 def test_patch_a_car(create_car, patch_new_car):
     post_id = create_car['id']
     body = {

@@ -31,8 +31,6 @@ def create_car(create_car_endpointe, del_new_car):
     del_new_car.del_obj(post_id)
 
 
-
-
 @pytest.fixture()
 def create_car_endpointe(start_stop, precond):
     return CreatePost()
